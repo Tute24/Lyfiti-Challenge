@@ -1,0 +1,41 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider  = "postgresql"
+    url       = env("DATABASE_URL")
+    directUrl = env("DIRECT_URL")
+}
+
+model Task {
+    id            String   @id @default(uuid())
+    title         String
+    description   String
+    urgencyScore  Int      @map("urgency_score")
+    impactScore   Int      @map("impact_score")
+    priorityScore Int      @map("priority_score")
+    category      String
+    reasoning     String
+    createdAt     DateTime @default(now()) @map("created_at")
+    updatedAt     DateTime @updatedAt @map("updated_at")
+
+    aiLogs AiLog[]
+
+    @@map("tasks")
+}
+
+model AiLog {
+    id             String   @id @default(uuid())
+    taskId         String?  @map("task_id")
+    task           Task?    @relation(fields: [taskId], references: [id])
+    model          String
+    systemPrompt   String   @map("system_prompt")
+    userInput      String   @map("user_input")
+    rawResponse    String   @map("raw_response")
+    parsedResponse Json?    @map("parsed_response")
+    status         String
+    createdAt      DateTime @default(now()) @map("created_at")
+
+    @@map("ai_logs")
+}
