@@ -18,4 +18,12 @@ export class PrismaTasksRepository implements TasksRepository {
 
     return task;
   }
+  async getTasks() {
+    const tasks = await prisma.task.findMany({
+      orderBy: {
+        createdAt: 'desc',
+      },
+    });
+    return tasks;
+  }
 }
