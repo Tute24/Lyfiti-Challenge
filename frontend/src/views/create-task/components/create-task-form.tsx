@@ -33,7 +33,7 @@ export function CreateTaskForm() {
   return (
     <div className="min-h-[calc(100vh-70px)] flex items-center justify-center px-4">
       <div className="w-full max-w-md bg-white rounded-2xl shadow-md border border-cyan-400 p-8">
-        <h1 className="text-2xl font-semibold font-(family-name:--font-poppins) text-gray-900 mb-6 text-center">
+        <h1 className="text-2xl font-semibold font-sans text-gray-900 mb-6 text-center">
           Create Task
         </h1>
 
