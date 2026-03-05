@@ -147,7 +147,7 @@ export function TasksTable({ tasks }: TasksTableProps) {
           </span>
         </div>
 
-        <div className="overflow-x-auto">
+        <div className="overflow-auto max-h-120">
           <table className="w-full min-w-180">
             <thead className="bg-gray-50">
               <tr>
