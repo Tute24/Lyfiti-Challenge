@@ -32,8 +32,8 @@ function CustomTooltip({ active, payload }: CustomTooltipProps) {
   if (!active || !payload?.length) return null;
   const d = payload[0].payload;
   return (
-    <div className="bg-white border border-gray-100 rounded-xl shadow-md px-4 py-3 text-sm">
-      <p className="font-semibold text-gray-900 mb-1 max-w-45 truncate">
+    <div className="bg-white border border-gray-100 rounded-xl shadow-md px-4 py-3 text-sm max-w-64">
+      <p className="font-semibold text-gray-900 mb-1 wrap-break-word">
         {d.name}
       </p>
       <p className="text-gray-500">

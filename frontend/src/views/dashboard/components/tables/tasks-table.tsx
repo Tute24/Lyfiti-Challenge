@@ -196,7 +196,7 @@ export function TasksTable({ tasks }: TasksTableProps) {
                 <th className={thBase}>Created at</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-gray-50">
+            <tbody className="divide-y divide-gray-300">
               {sorted.length === 0 ? (
                 <tr>
                   <td
@@ -212,10 +212,10 @@ export function TasksTable({ tasks }: TasksTableProps) {
                     key={task.id}
                     className="hover:bg-gray-50 transition-colors"
                   >
-                    <td className="px-4 py-3 text-sm text-gray-900 font-medium max-w-40 truncate">
+                    <td className="px-4 py-3 text-sm text-cyan-700 font-medium max-w-40 whitespace-normal wrap-break-word">
                       {task.title}
                     </td>
-                    <td className="px-4 py-3 text-sm text-gray-500 max-w-50 truncate">
+                    <td className="px-4 py-3 text-sm text-gray-700 max-w-50 whitespace-normal wrap-break-word">
                       {task.description}
                     </td>
                     <td className="px-4 py-3">
@@ -234,7 +234,7 @@ export function TasksTable({ tasks }: TasksTableProps) {
                     <td className="px-4 py-3 text-sm text-center">
                       <ScoreCell value={task.priorityScore} />
                     </td>
-                    <td className="px-4 py-3 text-sm text-gray-400 whitespace-nowrap">
+                    <td className="px-4 py-3 text-sm text-gray-700 whitespace-nowrap">
                       {formatDate(task.createdAt)}
                     </td>
                   </tr>
