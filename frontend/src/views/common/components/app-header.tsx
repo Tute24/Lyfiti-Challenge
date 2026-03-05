@@ -18,13 +18,6 @@ export function AppHeader() {
         >
           Create Task
         </Link>
-
-        <Link
-          href="/logs-history"
-          className="text-cyan-700 hover:text-cyan-800 font-bold font-display transition-colors hover:underline"
-        >
-          See AI History
-        </Link>
       </div>
     </header>
   );
