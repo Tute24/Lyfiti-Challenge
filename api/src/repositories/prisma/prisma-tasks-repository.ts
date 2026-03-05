@@ -23,6 +23,16 @@ export class PrismaTasksRepository implements TasksRepository {
       orderBy: {
         createdAt: 'desc',
       },
+      select: {
+        id: true,
+        title: true,
+        description: true,
+        urgencyScore: true,
+        impactScore: true,
+        priorityScore: true,
+        category: true,
+        createdAt: true,
+      },
     });
     return tasks;
   }

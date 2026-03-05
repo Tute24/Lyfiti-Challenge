@@ -18,6 +18,6 @@ export async function createTaskController(req: Request, res: Response) {
     taskScoringProvider,
   );
 
-  const task = await createTaskService.execute({ title, description });
-  res.status(201).json({ message: 'Tarefa criada com sucesso!', task });
+  await createTaskService.execute({ title, description });
+  res.status(201).json({ message: 'Task created successfully!' });
 }
