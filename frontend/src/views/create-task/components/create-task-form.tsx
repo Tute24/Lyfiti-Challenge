@@ -66,11 +66,11 @@ export function CreateTaskForm() {
             >
               Task description
             </label>
-            <input
+            <textarea
               id="description"
-              type="text"
+              rows={4}
               placeholder="Enter task description"
-              className="w-full rounded-lg border border-gray-200 px-4 py-2.5 text-sm text-gray-900 placeholder:text-gray-400 outline-none focus:border-cyan-700 focus:ring-1 focus:ring-cyan-700 transition-colors"
+              className="w-full rounded-lg border border-gray-200 px-4 py-2.5 text-sm text-gray-900 placeholder:text-gray-400 outline-none focus:border-cyan-700 focus:ring-1 focus:ring-cyan-700 transition-colors resize-none"
               {...register('description')}
             />
             {errors.description && (

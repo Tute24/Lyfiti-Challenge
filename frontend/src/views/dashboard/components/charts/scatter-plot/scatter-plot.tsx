@@ -11,6 +11,7 @@ import {
   ResponsiveContainer,
   Label,
 } from 'recharts';
+import { ScatterPlotTooltip } from './scatter-plot-tooltip';
 
 interface ScatterPoint {
   x: number;
@@ -21,33 +22,6 @@ interface ScatterPoint {
 
 interface ScatterPlotProps {
   data: ScatterPoint[];
-}
-
-interface CustomTooltipProps {
-  active?: boolean;
-  payload?: { payload: ScatterPoint }[];
-}
-
-function CustomTooltip({ active, payload }: CustomTooltipProps) {
-  if (!active || !payload?.length) return null;
-  const d = payload[0].payload;
-  return (
-    <div className="bg-white border border-gray-100 rounded-xl shadow-md px-4 py-3 text-sm max-w-64">
-      <p className="font-semibold text-gray-900 mb-1 wrap-break-word">
-        {d.name}
-      </p>
-      <p className="text-gray-500">
-        Urgency: <span className="font-medium text-gray-800">{d.x}</span>
-      </p>
-      <p className="text-gray-500">
-        Impact: <span className="font-medium text-gray-800">{d.y}</span>
-      </p>
-      <p className="text-gray-500">
-        Priority:{' '}
-        <span className="font-medium text-cyan-700">{d.priorityScore}</span>
-      </p>
-    </div>
-  );
 }
 
 export function ScatterPlot({ data }: ScatterPlotProps) {
@@ -106,10 +80,10 @@ export function ScatterPlot({ data }: ScatterPlotProps) {
               strokeDasharray="5 5"
             />
             <Tooltip
-              content={<CustomTooltip />}
+              content={<ScatterPlotTooltip />}
               cursor={{ strokeDasharray: '3 3' }}
             />
-            <Scatter data={data} fill="#0e7490" fillOpacity={0.8} r={6} />
+            <Scatter data={data} fill="#0e7490" fillOpacity={0.8} r={10} />
           </ScatterChart>
         </ResponsiveContainer>
       </div>

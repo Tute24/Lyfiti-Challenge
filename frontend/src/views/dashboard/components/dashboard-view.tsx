@@ -1,7 +1,7 @@
 import { Task } from '../types/task';
 import { TasksTable } from './tables/tasks-table';
-import { ScatterPlot } from './charts/scatter-plot';
-import { CategoryBarChart } from './charts/category-bar-chart';
+import { ScatterPlot } from './charts/scatter-plot/scatter-plot';
+import { CategoryBarChart } from './charts/category-bar-chart/category-bar-chart';
 
 interface DashboardViewProps {
   tasks: Task[];
